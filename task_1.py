@@ -93,20 +93,13 @@
 
 # - створити функцію яка приймає ліст чисел та складає значення елементів ліста та повертає його.
 # def get_count_from_list(l):
-#     res = 0
-#     for num in l:
-#         res += num
-#     return res
+#     return sum(l)
 #
 # print(get_count_from_list([1, 2, 3, 4, 5]))
 
 # - створити функцію яка приймає ліст чисел та повертає середнє арифметичне його значень.
 # def get_avg_from_list(l):
-#     count = 0
-#     for num in l:
-#         count += num
-#     return count / len(l)
-#
+#     return sum(l) / len(l)
 #
 # print(get_avg_from_list([1, 2, 3, 4, 5, 6]))
 
