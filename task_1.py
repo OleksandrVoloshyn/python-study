@@ -4,11 +4,7 @@
 # 2,3,5,4,4        #вивело в консолі.
 
 # st = 'as 23 fdfdg544'
-# res = ''
-# for i in st:
-#     if i.isdigit():
-#         res += i
-# print(', '.join(res))
+# print(','.join([i for i in st if i.isdigit()]))
 
 # #################################################################################
 # 2)написати прогу яка вибирає зі введеної строки числа і виводить їх
@@ -18,13 +14,7 @@
 #   23, 544, 34              #вивело в консолі
 
 # st = 'as 23 fdfdg544 34'
-# res = ''
-# for i in st:
-#     if i.isdigit():
-#         res += i
-#     else:
-#         res += ' '
-# print(', '.join(res.split()))
+# print(', '.join(''.join([i if i.isdigit() else ' ' for i in st]).split()))
 
 # #################################################################################
 #
@@ -36,22 +26,17 @@
 # пример:
 # ['H', 'E', 'L', 'L', 'O', ',', ' ', 'W', 'O', 'R', 'L', 'D']
 
-# res = [i.upper() for i in greeting]
-# print(res)
+# print([i.upper() for i in greeting])
 
 # 2) с диапазона от 0-50 записать в лист только не парные числа, при этом возвести их в квадрат
 # пример:
 # [0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225, 256, 289, 324, ...]
-
-# res = [i ** 2 for i in range(0, 50) if i % 2]
-# print(res)
+# print([i ** 2 for i in range(0, 50) if i % 2])
 
 # function
-#
 # - створити функцію яка виводить ліст
 # def print_list(el):
 #     print(el)
-#
 #
 # print_list([1, 2, 3, 4])
 
@@ -61,7 +46,6 @@
 #     print(res)
 #     return res
 #
-#
 # print_get_min(1, 2, 3)
 
 # - створити функцію яка приймає три числа та виводить та повертає найбільше.
@@ -69,13 +53,13 @@
 #     res = max(one, two, three)
 #     print(res)
 #     return res
+#
 # print_get_max(1,2,3)
 
 # - створити функцію яка приймає будь-яку кількість чисел, повертає найменьше, а виводить найбільше
 # def print_max_get_min(*args):
 #     print(max(args))
 #     return min(args)
-#
 #
 # print(print_max_get_min(1, 2, 3, 4, 5, 6))
 
@@ -125,37 +109,23 @@
 
 # 2)вывести на экран пустой квадрат из "*" сторона которого указана в переменой:
 # side = 10
-# i = side
-# while i >= 1:
-#     if i == side or i == 1:
-#         j = side
-#         while j > 0:
-#             print('*', end='')
-#             j -= 1
-#         print()
+# for i in range(side):
+#     if i == 0 or i == (side - 1):
+#         print('*' * side)
 #     else:
-#         j = side - 2
-#         print('*', end='')
-#         while j > 0:
-#             print(' ', end='')
-#             j -= 1
-#         print('*')
-#     i -= 1
+#         print('*' + ' ' * (side - 2) + '*')
 
 # 3) вывести табличку умножения с помощью цикла while
-# size = 10
-# i = 1
-# while i <= size:
+# i = j = 1
+# while i <= 10:
 #     j = 1
-#     while j <= size:
-#         res = i * j
-#         if res // 10:
-#             print(res, end='  ')
-#         else:
-#             print(res, end='   ')
+#     while j < 10:
+#         multi = i * j
+#         print(multi, end='')
+#         print('  ' if multi // 10 else '   ', end='')
 #         j += 1
-#     print()
 #     i += 1
+#     print()
 
 # 4) переделать первое задание под меню с помощью цикла
 def remove_duplicate(target):
