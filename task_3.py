@@ -165,7 +165,7 @@ class Main:
 
     @classmethod
     def add(cls, item):
-        if isinstance(item, Book) or isinstance(item, Magazine):
+        if isinstance(item, (Book, Magazine)):
             cls.printable_list.append(item)
 
     @classmethod
