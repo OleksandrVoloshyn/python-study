@@ -55,10 +55,13 @@ try:
                 except ValueError as err:
                     print('price має бути числом')
                 else:
-                    with open('db.txt', 'w+') as file:
-                        note = {'purchase': purchase, 'price': price}
-                        db.append(note)
-                        json.dump(db, file)
+                    try:
+                        with open('db.txt', 'w') as file:
+                            note = {'purchase': purchase, 'price': price}
+                            db.append(note)
+                            json.dump(db, file)
+                    except Exception as err:
+                        print(err)
 
             case '2':
                 for obj in db:
