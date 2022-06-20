@@ -96,3 +96,5 @@ try:
 
 except KeyboardInterrupt as err:
     print('\n Вихід')
+except Exception as err:
+    print(err)
