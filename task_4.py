@@ -99,3 +99,5 @@ while True:
             note.find_by_name()
         case '9':
             break
+        case _:
+            print('Неправильно в введені дані')
