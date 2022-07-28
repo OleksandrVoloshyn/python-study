@@ -4,9 +4,9 @@
 #
 # def time_decor(func):
 #     def inner(*args, **kwargs):
-#         start = time.time()
+#         start = time.monotonic()
 #         func()
-#         print(time.time() - start)
+#         print(time.monotonic() - start)
 #
 #     return inner
 #
@@ -37,9 +37,9 @@ import uuid
 
 def time_decor(func):
     def inner(*args, **kwargs):
-        start = time.time()
+        start = time.monotonic()
         func()
-        print(time.time() - start)
+        print(time.monotonic() - start)
 
     return inner
 

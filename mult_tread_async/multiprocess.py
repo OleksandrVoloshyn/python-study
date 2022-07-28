@@ -5,9 +5,9 @@ import multiprocessing
 
 def time_decor(func):
     def inner(*args, **kwargs):
-        start = time.time()
+        start = time.monotonic()
         func(*args, **kwargs)
-        print(time.time() - start)
+        print(time.monotonic() - start)
 
     return inner
 
